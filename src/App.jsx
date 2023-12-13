@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./Components/Signup";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import ForgotPassword from "./Components/ForgotPassword";
@@ -18,7 +18,6 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset_password/:id/:token" element={<ResetPassword />} />
-
       </Routes>
     </BrowserRouter>
   );

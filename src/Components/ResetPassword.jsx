@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
+
 const ResetPassword = () => {
   const [password, setPassword] = useState();
     const navigate = useNavigate();
@@ -15,8 +16,7 @@ const ResetPassword = () => {
   axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(`http://localhost:4000/reset-password/${id}/${token}`, {password})
+    axios.post(`http://localhost:4000/reset-password/${id}/${token}`, {password})
       .then((res) => {
         if (res.data.Status === "Success") {
           navigate("/login");

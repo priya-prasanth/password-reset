@@ -3,7 +3,7 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import "./Signup.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios  from "axios";
 import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
@@ -13,14 +13,12 @@ const ForgotPassword = () => {
   axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:4000/forgot-password", {email})
+    axios.post("http://localhost:4000/forgot-password", {email})
       .then(res => {
         if (res.data.Status === "Success") {
           navigate("/login");
         }
-      })
-      .catch((error) => console.log(error));
+      }).catch((error) => console.log(error));
   };
 
   return (
