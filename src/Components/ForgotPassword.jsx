@@ -13,12 +13,14 @@ const ForgotPassword = () => {
   axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/forgot-password", {email})
-      .then(res => {
+    axios
+      .post("https://password-reset-9pjf.onrender.com/forgot-password", {email})
+      .then((res) => {
         if (res.data.Status === "Success") {
           navigate("/login");
         }
-      }).catch((error) => console.log(error));
+      })
+      .catch((error) => console.log(error));
   };
 
   return (

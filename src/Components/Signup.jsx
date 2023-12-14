@@ -15,10 +15,15 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("http://localhost:4000/register", { name, email, password })
-      .then(res => {
-        navigate('/login')
-      }).catch(error => console.log(error))
+    axios.post("https://password-reset-9pjf.onrender.com/register", {
+        name,
+        email,
+        password,
+      })
+      .then((res) => {
+        navigate("/login");
+      })
+      .catch((error) => console.log(error));
   }
 
 

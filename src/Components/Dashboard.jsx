@@ -8,14 +8,15 @@ const Dashboard = () => {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://localhost:4000/dashboard')
-            .then(res => {
-                if(res.data === "Success") {
-                    setSuc("Succeded OK")
-                } else {
-                    navigate('/')
-                    }
-        }).catch(err=>console.log(err))
+        axios.get("https://password-reset-9pjf.onrender.com/dashboard")
+          .then((res) => {
+            if (res.data === "Success") {
+              setSuc("Succeded OK");
+            } else {
+              navigate("/");
+            }
+          })
+          .catch((err) => console.log(err));
     }, [])
 
     return (
