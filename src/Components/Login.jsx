@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/login", { email, password })
+      .post("https://password-reset-9pjf.onrender.com/login", { email, password })
       .then((res) => {
         console.log("login:" + res.data);
         if (res.data.Status === "Success") {

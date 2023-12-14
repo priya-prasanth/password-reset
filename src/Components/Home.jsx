@@ -7,14 +7,15 @@ import "./Signup.css"
 const Home = () => {
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get("http://localhost:4000/home")
-            .then(result => {
-                console.log(result)
-                if (result.data !== "Success") {
-                    navigate("/login");
-                    }
-    })
-    .catch((err) => console.log(err))
+        axios
+          .get("https://password-reset-9pjf.onrender.com")
+          .then((result) => {
+            console.log(result);
+            if (result.data !== "Success") {
+              navigate("/login");
+            }
+          })
+          .catch((err) => console.log(err));
     }, [])
   
     return (
